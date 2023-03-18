@@ -10,10 +10,9 @@ export = function firstModule(name: string): void {
         "utf-8"
     );
     figlet.parseFont("ANSI Regular", fontData);
-    const text = figlet.textSync(`hello -> ${name},  -> fica com deuso`, {
+    const text = figlet.textSync(`hello ${name}`, {
         font: "ANSI Regular",
         horizontalLayout: "fitted",
     });
-    // const text = `Hello meu amigao, que deus te abencoe${name}`;
     console.log(text);
 };

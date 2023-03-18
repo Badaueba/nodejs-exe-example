@@ -7,7 +7,7 @@
         "start": "tsx index",
         "build": "tsc --build --force",
         "bundle": "yarn build && npm i -g",
-        "compile": "pkg  ./index.js",
+        "compile": "pkg  ./index.js -o \"build/shit\" ",
         "build-compile": "yarn build && yarn compile "
     },
     "bin": {
@@ -17,18 +17,23 @@
     "devDependencies": {
         "@types/clear": "^0.1.2",
         "@types/figlet": "^1.5.5",
+        "@types/inquirer": "^9.0.3",
         "@types/node": "^18.15.3",
-        "tsx": "^3.12.5"
+        "pkg": "^5.8.1",
+        "tsx": "^3.12.5",
+        "typescript": "^5.0.2"
     },
     "dependencies": {
         "clear": "^0.1.0",
-        "figlet": "^1.5.2"
+        "figlet": "^1.5.2",
+        "inquirer": "^9.1.4"
     },
     "pkg": {
         "scripts": "**/*.js",
         "targets": [
             "node14-linux-arm64"
         ],
-        "assets": "./assets"
+        "assets": "./assets",
+        "outputPath": "./build"
     }
 }
