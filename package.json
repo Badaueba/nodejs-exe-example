@@ -4,29 +4,31 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "start": "tsx index",
-        "build": "tsc --build --force",
-        "bundle": "yarn build && npm i -g",
-        "compile": "pkg  ./index.js -o \"build/shit\" ",
-        "build-compile": "yarn build && yarn compile "
+        "start": "ts-node index.ts",
+        "tsc": "tsc --build --force && cp -r assets/ dist/",
+        "bundle": "yarn tsc && npm i -g",
+        "compile": "pkg  ./dist/index.js -o \"build/hello\" ",
+        "build-compile": "yarn tsc && yarn compile "
     },
     "bin": {
-        "shitjs": "index.js"
+        "shitjs": "./dist/index.js"
     },
     "type": "commonjs",
     "devDependencies": {
         "@types/clear": "^0.1.2",
         "@types/figlet": "^1.5.5",
-        "@types/inquirer": "^9.0.3",
         "@types/node": "^18.15.3",
         "pkg": "^5.8.1",
+        "ts-node": "^10.9.1",
         "tsx": "^3.12.5",
         "typescript": "^5.0.2"
     },
     "dependencies": {
+        "@types/chalk": "^2.2.0",
+        "chalk": "4.1.2",
         "clear": "^0.1.0",
-        "figlet": "^1.5.2",
-        "inquirer": "^9.1.4"
+        "enquirer": "^2.3.6",
+        "figlet": "^1.5.2"
     },
     "pkg": {
         "scripts": "**/*.js",
