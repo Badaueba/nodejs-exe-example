@@ -13,7 +13,7 @@ interface EnquirerPrompt<T> {
 
 export = async function firstModule(name: string) {
     const fontData = fs.readFileSync(
-        path.join(__dirname, "/assets/fonts/ANSI_Regular.flf"),
+        path.join(__dirname, "../assets/fonts/ANSI_Regular.flf"),
         "utf-8"
     );
 

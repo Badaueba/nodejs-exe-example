@@ -4,7 +4,7 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "start": "ts-node index.ts",
+        "start": "tsx lib/index.ts",
         "tsc": "tsc --build --force && cp -r assets/ dist/",
         "bundle": "yarn tsc && npm i -g",
         "compile": "pkg  ./dist/index.js -o \"build/hello\" --targets \"node18-linux-x64,node18-win-x64,node18-macos-x64\" ",
